@@ -1,0 +1,87 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+build/
+dist-ssr/
+.next/
+out/
+coverage/
+.temp/
+.cache/
+public/build/
+
+# Environment variables
+.env
+.env.*.local
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Lock files (ignored)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm/
+
+# Logs & debug
+*.tgz
+npm-debug.log*
+
+# Local serverless directories
+.serverless/
+.functions/
+
+# Misc
+*.zip
+*.tar
+*.gz
+
+# Hosting platform build outputs
+.firebase/
+.vercel/
+.netlify/
+
+# Local IDE configs
+*.code-workspace
+
+# macOS specific
+.AppleDouble
+.LSOverride
