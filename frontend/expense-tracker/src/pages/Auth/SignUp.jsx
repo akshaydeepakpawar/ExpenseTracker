@@ -16,7 +16,26 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   //handle sign up form submit
-  const handleSignUp = async (e) => {};
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    let profileImageUrl="";
+    if(!fullName)
+    {
+      setError("Please enter your name")
+      return ;
+    }
+    if(!validateEmail(email)){
+      setError("Please enter a valid email")
+      return ;
+    }
+    if(!password){
+      setError("please enter the valid email")
+      return ;
+    }
+    setError("");
+    //signup aip call
+    
+  };
 
   return (
     <AuthLayout>
@@ -27,8 +46,7 @@ const SignUp = () => {
         </p>
 
         <form onSubmit={handleSignUp}>
-
-          <ProfilePhotoSelector image={profilePic} setImage={setProfilePic}/>
+          <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
 
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
@@ -46,13 +64,26 @@ const SignUp = () => {
               type="text"
             />
             <div className="col-span-2">
-            <Input
-              value={password}
-              onChange={({ target }) => setPassword(target.value)}
-              lable="Password"
-              placeholder="Min 8 Characters"
-              type="password"
-            />
+              <Input
+                value={password}
+                onChange={({ target }) => setPassword(target.value)}
+                lable="Password"
+                placeholder="Min 8 Characters"
+                type="password"
+              />
+              {error && <p className="text-red-500 text-xs pb-2.5 ">{error}</p>}
+              <button type="submit" className="btn-primary">
+                SIGN UP
+              </button>
+              <p className="text-[13px] text-slate-800 mt-3 ">
+                Already have an account?{" "}
+                <Link
+                  className="font-medium text-primary underline"
+                  to="/Login"
+                >
+                  Login
+                </Link>
+              </p>
             </div>
           </div>
         </form>
