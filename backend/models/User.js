@@ -4,20 +4,20 @@ import bcrypt from "bcryptjs";
 export const UserSchema = new mongoose.Schema(
   {
     fullName: {
-      Type: String,
+      type: String,
       require: true,
     },
     email: {
-      Type: String,
+      type: String,
       require: true,
       unique: true,
     },
     password: {
-      Type: String,
+      type: String,
       require: true,
     },
     profileImageUrl: {
-      Type: String,
+      type: String,
       default: null,
     },
   },
@@ -25,13 +25,16 @@ export const UserSchema = new mongoose.Schema(
 );
 
 //hash pass before storing into the db
-UserSchema.pre("save",async (next)=>{
+UserSchema.pre("save",async function (next) {
     if(!this.isModified("password")) return next();
     this.password=await bcrypt.hash(this.password,10);
     next();
 })
 
 //compare the pass
-UserSchema.method.comparePassword=async(candidatePassword)=>{
+UserSchema.methods.comparePassword=async function(candidatePassword){
     return await bcrypt.compare(candidatePassword,this.password);
 }   
+
+const User = mongoose.model("User", UserSchema);
+export default User;
