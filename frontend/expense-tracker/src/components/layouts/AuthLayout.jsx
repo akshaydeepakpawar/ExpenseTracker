@@ -24,7 +24,7 @@ const AuthLayout = ({ children }) => {
         <img
           src={CARD_2}
           alt=""
-          className="w-64 [clip-path:inset(0_1px_0_0)] lg:w-[90%] absolute bottom-10 shadow-lg shadow-blue-400/15 rounded-2xl "
+          className="w-64 [clip-path:inset(0_1px_0_0)] lg:w-[92%] absolute bottom-32 shadow-lg shadow-blue-400/15 rounded-3xl "
         />
       </div>
     </div>
